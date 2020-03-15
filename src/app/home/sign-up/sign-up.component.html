@@ -1,0 +1,54 @@
+
+<div class="main">
+       <p class="sign" align="center">SignUp</p>
+       <form class="form1" [formGroup]="signUpForm" >
+     
+         <input type="text"
+                class="un"
+                formControlName="username"
+                placeholder="Enter username">
+                <span class="help-block"
+                *ngIf="username.invalid && username.touched">
+                   <p style="color: red; text-align: center;">Username is invalid</p> 
+                </span>
+     
+         <input type="text"
+                class="un"
+                formControlName="contact"
+                placeholder="Enter Contact">
+                <span class="help-block"
+                *ngIf="contact.invalid && contact.touched">
+                   <p style="color: red; text-align: center;">Contact is invalid</p> 
+                </span>
+
+              <input type="text"
+              class="un"
+              formControlName="role"
+              placeholder="user"> 
+     
+         <input type="email"
+                class="un"
+                formControlName="email"
+                placeholder="Enter email">
+                <span class="help-block"
+                *ngIf="email.invalid && email.touched">
+                   <p style="color: red; text-align: center;">Email is invalid</p> 
+              </span>
+       
+         <input type="password"
+                class="pass"
+                formControlName="password"
+                placeholder="Password">
+                <span class="help-block"
+                *ngIf="password.invalid && password.touched">
+                   <p style="color: red; text-align: center;">Password is invalid</p> 
+                </span>
+     
+         <button class="submit" (click)=" submit()">Sign Up &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+       </form>
+       <br>
+       <div *ngIf="success"><h5 style="color: green; text-align:center;">You have successfully registered!</h5></div>
+     </div>
+     <app-home></app-home>
+     
+     

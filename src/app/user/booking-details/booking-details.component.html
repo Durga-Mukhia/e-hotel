@@ -1,0 +1,31 @@
+
+
+<div class="page-content p-5" id="content">
+    <h4 style="text-align: center;color:darkslategray;">Hotel Booking History</h4>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name of the Hotel</th>
+        <th scope="col">Check In Date</th>
+        <th scope="col">Check Out Date</th>
+        <th scope="col">Number of Guests</th>
+        <th scope="col">Number of Rooms</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of bookings">
+            <td>{{x.hotelName}}</td>
+            <td>{{x.check_in_date}}</td>
+            <td>{{x.check_out_date}}</td>
+            <td>{{x.number_of_guest}}</td>
+            <td>{{x.number_of_rooms}}</td>
+        </tr> 
+    </tbody>
+  </table>
+</div>  
+
+
+
+
+
+

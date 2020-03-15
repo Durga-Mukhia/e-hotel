@@ -1,0 +1,36 @@
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        <input class="form-control" placeholder="Hotel Name" [(ngModel)]="hotelService.currentHotel.hotelName">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-group">
+        <input class="form-control" placeholder="Contact" [(ngModel)]="hotelService.currentHotel.contact">
+    </div>
+    <div class="col-md-6 form-group">
+        <input class="form-control" placeholder="Ratings" [(ngModel)]="hotelService.currentHotel.ratings">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        <input class="form-control" placeholder="Location" [(ngModel)]="hotelService.currentHotel.location">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        <label for="exampleFormControlTextarea1">Amenities</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="hotelService.currentHotel.amenities"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-success btn-block btn-md" (click)="createHotel(hotelService.currentHotel)"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Add</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary btn-block btn-md"  (click)="clear(hotelService.currentHotel)"><i class="fa fa-retweet" aria-hidden="true"></i> &nbsp;Clear</button>
+    </div>
+</div>

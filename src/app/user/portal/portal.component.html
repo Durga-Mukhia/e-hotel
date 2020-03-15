@@ -1,0 +1,102 @@
+
+<div class="page-content p-5" id="content">
+    <h3 style="text-align: center;color:darkslategray;">Hotel List</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Ratings</th>
+        <th scope="col">Location</th>
+        <th scope="col">Amenities</th>
+        <th scope="col">Action</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hotel of allHotels">
+         <td>{{hotel.hotelName}}</td> 
+         <td>{{hotel.contact}}</td>
+         <td>{{hotel.ratings}}</td>
+         <td>{{hotel.location}}</td>
+         <td>{{hotel.amenities}}</td>
+         <td>
+            <button  class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+              Book
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Please fill up all the following requirements.</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="bookingForm">
+                      <div class="form-row">
+                          <div class="form-group col-md-12">
+                          <input type="string" 
+                          class="form-control" 
+                          formControlName="hotelName"
+                          placeholder="Name of the hotel">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="checkInDate">Check In Date</label>
+                          <input type="date" 
+                          class="form-control" 
+                          formControlName="check_in_date"
+                          placeholder="Check In Date">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="checkOutDate">Check Out Date</label>
+                          <input type="date" 
+                          class="form-control"
+                          formControlName="check_out_date" 
+                          placeholder="Check Out Date">
+                      </div>
+                      </div>
+                      <div class="row">
+                          <div class="col md-6">
+                              <input type="number" 
+                              class="form-control"
+                              formControlName="number_of_guest" 
+                              placeholder="How many people?">
+                          </div>
+                          <div class="col md-6">
+                          <input type="number" 
+                          class="form-control"
+                          formControlName="number_of_rooms" 
+                          placeholder="How many rooms?">
+                      </div>
+                          </div>
+                          <br>
+                          <button type="submit" class="btn btn-outline-primary btn-lg btn-block" (click)="submitBookings()">Place the booking order</button>
+                      </form>
+                        <br>
+                        <div *ngIf="success">
+                          
+                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <h5 style="color: green; text-align:center;">Your request has been submitted successfully, Wait for the Acknowledgement.</h5>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        </div>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </td>
+         <td>
+           <a ><button type="button" class="btn btn-outline-primary">View Details&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></button></a>
+         </td>
+      </tr>   
+    </tbody>
+  </table>
+</div>
+
+<app-user></app-user>

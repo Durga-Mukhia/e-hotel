@@ -1,0 +1,33 @@
+<div class="main">
+  <p class="sign" align="center">LogIn</p>
+  <form class="form1" [formGroup]="logInForm">
+
+    <input type="email"
+           class="un"
+           type="email"
+           align="center"
+           formControlName="email"
+           placeholder="Email">
+    <div *ngIf="email.invalid && email.touched" class="text-danger">
+      <p style="color: red; text-align: center;">Email is invalid</p> 
+    </div>
+
+    <input type="password"
+           class="pass"
+           formControlName="password"
+           placeholder="Password">
+    <div *ngIf="password.invalid && password.touched" class="text-danger">
+      <p style="color: red; text-align: center;">Password is invalid</p> 
+    </div>
+    <div *ngIf="error" class="text-center text-danger">
+      Either email or password is incorrect!
+    </div>
+    <button class="submit" (click)="login()" [disabled]="logInForm.invalid" align="center">Log in &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+    <p class="forgot" align="center"><a routerLink="/home/forgot">Forgot Password?</a></p>
+    <br>
+    <div *ngIf="success" class="login">
+      Logged in successfully!
+    </div>
+  </form>
+</div>
+<app-home></app-home>
