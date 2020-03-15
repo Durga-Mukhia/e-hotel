@@ -15,6 +15,7 @@ export class PortalComponent implements OnInit {
   allHotels;
   bookingForm:FormGroup;
   success=false;
+  userDetail;
 
   constructor(
     private hotelService:HotelService, 
@@ -25,6 +26,7 @@ export class PortalComponent implements OnInit {
 
   ngOnInit() { 
     this.getAllHotels();
+    this.userDetail=JSON.parse(localStorage.getItem('token'));
     this.buildForm();
    }
 
@@ -35,7 +37,9 @@ export class PortalComponent implements OnInit {
       check_out_date : ['', [Validators.required]],
       number_of_guest: ['',[Validators.required]],
       number_of_rooms: ['', [Validators.required]],
-      status:false
+      status:false,
+      user_id:this.userDetail.id
+
     });
   }
 
@@ -46,7 +50,6 @@ export class PortalComponent implements OnInit {
       this.allHotels=res
     });
   }
-
 
   submitBookings() {
     this.bookingService.submitBookings(this.bookingForm.value)    

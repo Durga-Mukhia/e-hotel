@@ -2,7 +2,6 @@
 <div class="main">
        <p class="sign" align="center">SignUp</p>
        <form class="form1" [formGroup]="signUpForm" >
-     
          <input type="text"
                 class="un"
                 formControlName="username"
@@ -44,7 +43,7 @@
                    <p style="color: red; text-align: center;">Password is invalid</p> 
                 </span>
      
-         <button class="submit" (click)=" submit()">Sign Up &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+         <button class="submit" (click)=" submit()" [disabled]="signUpForm.invalid" align="center">Sign Up &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></button>
        </form>
        <br>
        <div *ngIf="success"><h5 style="color: green; text-align:center;">You have successfully registered!</h5></div>

@@ -10,6 +10,8 @@ import { BookingService } from './booking.service';
 export class BookingDetailsComponent implements OnInit {
 
   bookings;
+  userBookingDetail;
+  userBookingId;
  
   constructor(
     private bookingService:BookingService,
@@ -17,12 +19,14 @@ export class BookingDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getBookings();
+    this.userBookingDetail=JSON.parse(localStorage.getItem('token'));
+    this.userBookingId=this.userBookingDetail.id;
   }
 
   getBookings(){
     this.bookingService.getBookings()
     .subscribe((res:Array<any>)=>{
-    this.bookings =res.filter(data=>data.status==true);
+    this.bookings =res.filter(data=>data.status===true && data.user_id===this.userBookingId);
     });  
   }
 }
