@@ -55,7 +55,8 @@ export class PortalComponent implements OnInit {
     this.bookingService.submitBookings(this.bookingForm.value)    
     .subscribe(
       () => {
-        this.success = true
+        this.success = true;
+        setTimeout(()=>this.success=false, 3000);
       },
        err => console.log(err)   
     );

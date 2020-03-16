@@ -19,6 +19,9 @@ export class DashboardComponent implements OnInit {
   acceptedBooking;
   bookings;
 
+  userApproveSuccess=false;
+  bookingApproveSuccess=false;
+
   ngOnInit() {
     this.getUsers();
     this.getBookings();
@@ -36,7 +39,9 @@ export class DashboardComponent implements OnInit {
     user.permissionAccess = true;
     this.sharedService.updateAccessPermission(user.id, user)
     .subscribe( res => {
+      this.userApproveSuccess=true;
       this.acceptedUser = res;
+      setTimeout(()=>this.userApproveSuccess=false, 3000);
     });
   }
 
@@ -53,7 +58,9 @@ export class DashboardComponent implements OnInit {
   booking.status = true;
   this.bookingService.approveBooking(booking.id, booking )
   .subscribe(res=>{
+    this.bookingApproveSuccess=true;
     this.acceptedBooking=res;
+    setTimeout(()=>this.bookingApproveSuccess=false, 3000);
     });
   }
 

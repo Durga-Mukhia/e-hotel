@@ -24,6 +24,9 @@
     </tr>
     </tbody>
   </table>
+    <div *ngIf="userApproveSuccess">
+      <h5 style="color: green; text-align: center;">Approved!</h5>
+    </div>
   <hr>
   <br>
   <br>
@@ -53,5 +56,8 @@
       </tr>
       </tbody>
   </table>
+  <div *ngIf="bookingApproveSuccess">
+    <h5 style="color: green; text-align: center;">Approved!</h5>
+  </div>
 </div>
 <app-admin></app-admin>

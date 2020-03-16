@@ -53,8 +53,28 @@
       "role": "user",
       "permissionAccess": true,
       "id": 6
+    },
+    {
+      "username": "Pema",
+      "contact": "345678978",
+      "email": "p@p.com",
+      "password": "pema7890",
+      "role": "user",
+      "permissionAccess": true,
+      "id": 7
+    },
+    {
+      "username": "Yeshi",
+      "contact": "565768790",
+      "email": "y@y.com",
+      "password": "123456",
+      "role": "user",
+      "permissionAccess": true,
+      "id": 8
     }
   ],
+
+
   "hotels": [
     {
       "hotelName": "Ariya",
@@ -63,8 +83,27 @@
       "location": "Olakha",
       "amenities": "Gym,WiFi,Exotic rooms,pool",
       "id": 1
+    },
+    {
+      "id": 2,
+      "hotelName": "White Tara",
+      "contact": "6789009",
+      "ratings": "**",
+      "location": "Olakha,Thimphu",
+      "amenities": "Gym,Big rooms,Wifi"
+    },
+    {
+      "id": 3,
+      "hotelName": "Migmar",
+      "contact": "8746778",
+      "ratings": "***",
+      "location": "Changbangdu,Thimphu",
+      "amenities": "Pool, Wifi in rooms and lobby, exotic rooms"
     }
   ],
+
+
+  
   "bookings": [
     {
       "hotelName": "Druk",
@@ -103,6 +142,36 @@
       "status": true,
       "user_id": 5,
       "id": 4
+    },
+    {
+      "hotelName": "Migmar",
+      "check_in_date": "2020-03-13",
+      "check_out_date": "2020-03-17",
+      "number_of_guest": 4,
+      "number_of_rooms": 2,
+      "status": true,
+      "user_id": 5,
+      "id": 5
+    },
+    {
+      "hotelName": "White Tara",
+      "check_in_date": "2020-03-30",
+      "check_out_date": "2020-04-01",
+      "number_of_guest": 5,
+      "number_of_rooms": 3,
+      "status": true,
+      "user_id": 5,
+      "id": 6
+    },
+    {
+      "hotelName": "Migmar",
+      "check_in_date": "2020-03-25",
+      "check_out_date": "2020-03-27",
+      "number_of_guest": 1,
+      "number_of_rooms": 1,
+      "status": true,
+      "user_id": 3,
+      "id": 7
     }
   ]
 }
